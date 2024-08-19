@@ -1,0 +1,29 @@
+services:
+  # Layanan NGINX
+  nginx:
+    image: nginx:latest
+    ports:
+     - "10080:80"  # Akses NGINX di port 10080
+    volumes:
+      - ./html:/usr/share/nginx/html  # Direktori lokal ./html dipetakan ke /us>
+    networks:
+      - webnet
+
+  # Layanan NGINX Proxy Manager
+  nginx-proxy-manager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: always
+    ports:
+      - "80:80"      # Port HTTP
+      - "81:81"      # Port untuk akses GUI NGINX Proxy Manager
+      - "443:443"    # Port HTTPS
+    volumes:
+      - ./data:/data                 # Direktori lokal ./data untuk penyimpanan>
+      - ./letsencrypt:/etc/letsencrypt # Direktori untuk sertifikat SSL
+    environment:
+      DB_SQLITE_FILE: "/data/database.sqlite"  # Database SQLite untuk NGINX Pr>
+    networks:
+      - webnet
+
+networks:
+  webnet:
