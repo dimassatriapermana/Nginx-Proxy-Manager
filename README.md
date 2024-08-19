@@ -16,6 +16,7 @@
    - Select CentOS 9 Stream ISO as the source.
    - Allocate at least 2GB RAM and 2 CPUs for the VM.
    - Allocate 20GB disk space for the OS installation.
+<br>
 
 ## OS Installation
 
@@ -25,6 +26,7 @@
     ```bash
     sudo dnf update -y
     ```
+<br>
 
 ## Docker Installation
 
@@ -40,6 +42,7 @@
     sudo systemctl start docker
     sudo systemctl enable docker
     ```
+<br>
 
 ## Services Installation
 
@@ -76,6 +79,7 @@
     ```
 
 5. Access the HTML page via `http://<VM_IP>:10080` to ensure Nginx is working correctly.
+<br>
 
 ### Reverse Proxy
 
@@ -214,6 +218,7 @@
     ```
 
 7. Access NGINX Proxy Manager at `http://<VM_IP>:81` or `http://your_domain:81` to verify Nginx is working properly and for further configuration.
+<br>
 
 ### Configuration in Nginx Proxy Manager
 
@@ -233,6 +238,7 @@
     | Name             | your_crt_name        |
     | Certificate Key  | upload_your_crt_key  |
     | Certificate      | upload_your_crt      |
+<br>
 
 ### Perform Hardening
 
