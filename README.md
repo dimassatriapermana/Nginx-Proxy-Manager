@@ -121,21 +121,21 @@
 
 3. Create a local domain in the hosts file:
 
-  - Open a terminal and edit the hosts file:
-      ```bash
-      sudo nano /etc/hosts
-      ```
-  - Add the following line at the bottom of the file:
-      ```bash
-      <VM_IP>   your_domain
-      ```
-  - Save and exit the editor.
+    - Open a terminal and edit the hosts file:
+        ```bash
+        sudo nano /etc/hosts
+        ```
+    - Add the following line at the bottom of the file:
+        ```bash
+        <VM_IP>   your_domain
+        ```
+    - Save and exit the editor.
 
 4. Update Nginx configuration in `/etc/nginx/nginx.conf`:
 
-  - Change HTTP and HTTPS ports to 8080 and 8443 to avoid conflicts with Docker ports.
-  - Ensure `server_name` matches the local domain created.
-  - Verify SSL Certificate paths are correct.
+    - Change HTTP and HTTPS ports to 8080 and 8443 to avoid conflicts with Docker ports.
+    - Ensure `server_name` matches the local domain created.
+    - Verify SSL Certificate paths are correct.
 
       ```nginx
       user nginx;
